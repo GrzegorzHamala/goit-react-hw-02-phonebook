@@ -18,9 +18,7 @@ function listContact({ filter, contacts, removeContact }) {
               </li>
             ))
           : contacts
-              .filter(({ name }) =>
-                name.includes(filter)
-              )
+              .filter(({ name }) => name.toLowerCase().includes(filter))
               .map(({ id, name, number }) => (
                 <li key={id}>
                   {name}: {number}
